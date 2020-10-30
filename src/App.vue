@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-
+    <menu-bar></menu-bar>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-
+import MenuBar from "./components/MenuBar.vue";
 @Component({
-  components: {},
+  components: {
+    MenuBar,
+  },
 })
 export default class App extends Vue {}
 </script>
