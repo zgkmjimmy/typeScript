@@ -1,6 +1,6 @@
 //1.导入vuex和vue
 import Vuex from 'vuex'
-import vue from 'vue'
+import Vue from 'vue'
 
 //2.注册vuex到vue里面
 Vue.use(Vuex);
