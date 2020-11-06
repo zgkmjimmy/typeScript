@@ -21,7 +21,7 @@ class ItemData {
     //1.将时间戳转成日期对象
     let date = new Date(timeSpan);
     //2.使用日期对象的getXXX方法，依次获取年月日 时分秒，拼接成想要的格式
-    let str = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate + ' ' +
+    let str = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' +
       date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
     return str;
   }
@@ -29,3 +29,4 @@ class ItemData {
 
 
 export default ItemData;
+

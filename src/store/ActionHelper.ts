@@ -1,5 +1,6 @@
 import DataHelper from './DataHelper'
 import ItemData from '@/model/ItemData'
+import Category from '@/model/CateEnum';
 class ActionHelper {
   //1.负责数据处理
   dataHelper: DataHelper = new DataHelper('memoData', 'id');
@@ -8,11 +9,13 @@ class ActionHelper {
 
 
   constructor() {
+
     //读取本地数据，将笔记数组保存到this.memoList变量中
     this.memoList = this.readData();
   }
 
   readData(): Array<ItemData> {
+
     //1.读取本地的object数组-dataHelper
     let arrObj = this.dataHelper.readData();
     //2.将Object数组，转成ItemData数组
@@ -34,7 +37,7 @@ class ActionHelper {
   //2.1 新增笔记
   add(item: ItemData): number {
     //a.保存到本地 dataHelper.addData,会返回生成的id值
-    item.id = this.dataHelper.addData(item);
+    item.id = this.dataHelper.addData(item.toString());
     //b.将笔记添加到笔记数组中
     this.memoList.push(item);
     //c.将笔记数组重新保存到本地
@@ -74,6 +77,10 @@ class ActionHelper {
     }
   }
 
+  getCategoryName(cateId: Category): string {
+    const arrName = ['工作', '生活', '学习'];
+    return arrName[cateId]
+  }
 
 }
 
